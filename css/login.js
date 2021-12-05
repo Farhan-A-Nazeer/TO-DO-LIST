@@ -12,6 +12,9 @@ function validation() {
   if (userNameValue == null || userNameValue === '') {
     setErrorFor(userName, 'User name cannot be empty');
     return false;
+  }else if (!/^[a-z]*$/g.test(userNameValue)) {
+    setErrorFor(userName, 'Only small letters allowed');
+    return false;
   } else if (userNameValue.length < 5) {
     setErrorFor(userName, 'User name should be 5 characters long');
     return false;
